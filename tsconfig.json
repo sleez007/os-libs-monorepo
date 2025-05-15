@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/ssr-example"
+    },
+    {
+      "path": "./apps/node-example"
     }
   ]
 }
