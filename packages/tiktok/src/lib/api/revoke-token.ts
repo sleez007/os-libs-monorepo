@@ -12,14 +12,14 @@ export const revokeToken = async (
     client_key: clientKey,
     client_secret: clientSecret,
   };
-  const params = Object.entries(oAuthParam)
-    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-    .join('&');
+  const body = new URLSearchParams(oAuthParam);
+  const keys = Object.keys(oAuthParam);
+  keys.forEach((key) => body.append(key, oAuthParam[key]));
   await requestHandler({
     url: END_POINT.revoke.url,
     method: END_POINT.revoke.method,
     headers: HEADERS.urlEncoded,
-    body: JSON.stringify(params),
+    body,
   });
   return { message: 'Token revoked successfully' };
 };

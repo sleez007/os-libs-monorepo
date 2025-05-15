@@ -7,12 +7,12 @@ export const requestHandler = async <T>({
   url: string;
   method: string;
   headers: Record<string, string>;
-  body: Record<string, string> | string;
+  body: string | URLSearchParams;
 }): Promise<T> => {
   const response = await fetch(url, {
     method,
     headers,
-    body: typeof body === 'string' ? body : JSON.stringify(body),
+    body,
   });
   const data = (await response.json()) as T & { error: string };
   if (!response.ok) {

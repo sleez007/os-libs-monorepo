@@ -13,14 +13,15 @@ export const refreshToken = async (
     client_key: clientKey,
     client_secret: clientSecret,
   };
-  const params = Object.entries(oAuthParam)
-    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-    .join('&');
+  const body = new URLSearchParams(oAuthParam);
+  const keys = Object.keys(oAuthParam);
+  keys.forEach((key) => body.append(key, oAuthParam[key]));
+
   const response = await requestHandler<TokenResponse>({
     url: END_POINT.refresh.url,
     method: END_POINT.refresh.method,
     headers: HEADERS.urlEncoded,
-    body: JSON.stringify(params),
+    body,
   });
   return response;
 };
