@@ -1,0 +1,9 @@
+{
+  "name": "@innovate/tiktok",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tiktok/src",
+  "projectType": "library",
+  "tags": ["scope:package"],
+  "// targets": "to see all targets run: nx show project @innovate/tiktok --web",
+  "targets": {}
+}

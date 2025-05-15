@@ -2,17 +2,67 @@
   "name": "@my-libs/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "nx format:write",
+    "lint": "nx run-many --target=lint --all",
+    "check-circular-deps": "pnpx tsx scripts/check-circular-deps.ts",
+    "build": "nx run-many -t build typecheck --verbose",
+    "first:release": "nx release --first-release",
+    "generate:plan": "nx release plan",
+    "release": "nx release",
+    "local:registry": "nx run local-registry",
+    "prepare": "husky",
+    "test": "nx run-many -t test"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@nx/eslint": "20.5.0",
+    "@nx/eslint-plugin": "20.5.0",
+    "@nx/jest": "20.5.0",
     "@nx/js": "20.5.0",
+    "@nx/rollup": "20.5.0",
     "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@swc/jest": "~0.2.36",
+    "@types/jest": "^29.5.12",
+    "dpdm": "^3.14.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "lint-staged": "^16.0.0",
     "nx": "20.5.0",
     "prettier": "^2.6.2",
+    "rollup": "^4.14.0",
+    "swc-loader": "0.1.15",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
     "tslib": "^2.3.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.19.0",
+    "verdaccio": "^6.0.5"
+  },
+  "validate-branch-name": {
+    "pattern": "^(main|develop|live){1}$|^(feature|fix|refactor|hotfix|release|conflict)/NV-[0-9]{1,5}.*$",
+    "errorMsg": "Branch name structure: feature/NV-1234-new-feature\nAllowed prefixes: feature, fix, refactor, hotfix, release, conflict"
+  },
+  "dependencies": {},
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
   }
 }

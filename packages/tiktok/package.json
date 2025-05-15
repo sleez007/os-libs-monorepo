@@ -1,0 +1,47 @@
+{
+  "name": "@innovate/tiktok",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.esm.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.esm.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.esm.d.ts",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "license": "MIT",
+  "author": "Kingsley Etoka",
+  "description": "Tiktok SDK Wrapper for Node.js",
+  "keywords": [
+    "tiktok",
+    "sdk",
+    "wrapper",
+    "nodejs",
+    "NestJS",
+    "NextJs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innovate-ai/tiktok.git",
+    "directory": "packages/tiktok"
+  },
+  "homepage": "https://github.com/innovate-ai/tiktok#readme",
+  "contributors": [
+    {
+      "name": "Kingsley Etoka",
+      "email": "kingsley.etoka@innovate.co",
+      "url": "https://github.com/sleez007"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^22.15.18"
+  }
+}
