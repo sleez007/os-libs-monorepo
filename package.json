@@ -17,10 +17,13 @@
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@nestjs/schematics": "^10.0.1",
     "@nx/eslint": "20.5.0",
     "@nx/eslint-plugin": "20.5.0",
     "@nx/jest": "20.5.0",
     "@nx/js": "20.5.0",
+    "@nx/nest": "20.5.0",
+    "@nx/next": "20.5.0",
     "@nx/rollup": "20.5.0",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
@@ -51,7 +54,6 @@
     "pattern": "^(main|develop|live){1}$|^(feature|fix|refactor|hotfix|release|conflict)/NV-[0-9]{1,5}.*$",
     "errorMsg": "Branch name structure: feature/NV-1234-new-feature\nAllowed prefixes: feature, fix, refactor, hotfix, release, conflict"
   },
-  "dependencies": {},
   "nx": {
     "includedScripts": [],
     "targets": {
@@ -64,5 +66,10 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "next": "~15.1.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   }
 }
