@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/tiktok"
+    },
+    {
+      "path": "./apps/ssr-example"
     }
   ]
 }
