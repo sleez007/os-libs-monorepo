@@ -1,6 +1,6 @@
-import { END_POINT, HEADERS } from '../common/constants';
-import { requestHandler } from '../common/service';
-import { RevokeTokenParam } from '../common/types';
+import { END_POINT, HEADERS } from '../../common/constants';
+import { requestHandler } from '../../common/service';
+import { RevokeTokenParam } from '../../common/types';
 
 export const revokeToken = async (
   tokenParam: RevokeTokenParam,

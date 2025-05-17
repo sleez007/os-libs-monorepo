@@ -3,7 +3,7 @@ import {
   getRedirectUri,
   refreshToken,
   revokeToken,
-} from '../../api';
+} from '../../api/auth';
 import {
   ExchangeTokenParam,
   OauthParam,

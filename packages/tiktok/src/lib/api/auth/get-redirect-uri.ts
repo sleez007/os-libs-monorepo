@@ -1,6 +1,6 @@
-import { END_POINT } from '../common/constants';
-import { OauthParam } from '../common/types';
-import { generateCodeChallenge, generateCodeVerifier } from '../common/util';
+import { END_POINT } from '../../common/constants';
+import { OauthParam } from '../../common/types';
+import { generateCodeChallenge, generateCodeVerifier } from '../../common/util';
 
 export const getRedirectUri = (
   authParams: OauthParam,

@@ -1,6 +1,6 @@
-import { END_POINT, HEADERS } from '../common/constants';
-import { requestHandler } from '../common/service';
-import { RefreshTokenParam, TokenResponse } from '../common/types';
+import { END_POINT, HEADERS } from '../../common/constants';
+import { requestHandler } from '../../common/service';
+import { RefreshTokenParam, TokenResponse } from '../../common/types';
 
 export const refreshToken = async (
   refreshTokenParam: RefreshTokenParam,

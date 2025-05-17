@@ -7,7 +7,7 @@ export const requestHandler = async <T>({
   url: string;
   method: string;
   headers: Record<string, string>;
-  body: string | URLSearchParams;
+  body?: string | URLSearchParams;
 }): Promise<T> => {
   const response = await fetch(url, {
     method,
