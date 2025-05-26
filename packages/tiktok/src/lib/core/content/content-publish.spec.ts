@@ -14,9 +14,6 @@ afterEach(() => {
 const contentPublishTicTok = new ContentPublishTicTok('');
 describe('ContentPublishTicTok', () => {
   it('should work', () => {
-    expect(contentPublishTicTok.getCreatorInfo()).toBeDefined();
-    expect(contentPublishTicTok.postPhotos()).toBeDefined();
-    expect(contentPublishTicTok.sourceFileUpload()).toBeDefined();
-    expect(contentPublishTicTok.pullFromUrl()).toBeDefined();
+    expect(contentPublishTicTok.queryCreatorInfo()).toBeDefined();
   });
 });

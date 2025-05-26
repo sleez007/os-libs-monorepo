@@ -13,8 +13,6 @@ export const revokeToken = async (
     client_secret: clientSecret,
   };
   const body = new URLSearchParams(oAuthParam);
-  const keys = Object.keys(oAuthParam);
-  keys.forEach((key) => body.append(key, oAuthParam[key]));
   await requestHandler({
     url: END_POINT.revoke.url,
     method: END_POINT.revoke.method,

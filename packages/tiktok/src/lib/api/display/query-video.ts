@@ -1,13 +1,24 @@
 import { END_POINT, HEADERS } from '../../common/constants';
 import { requestHandler } from '../../common/service';
-import { QueryVideoParam, QueryVideoResponse } from '../../common/types';
+import {
+  QueryVideoParam,
+  QueryVideoResponse,
+  VideoFieldOption,
+} from '../../common/types';
 
-export const queryVideo = async (
-  accessToken: string,
-  body: QueryVideoParam
-): Promise<QueryVideoResponse> => {
+export const queryVideo = async ({
+  accessToken,
+  body,
+  fields = ['cover_image_url', 'id', 'title'],
+}: {
+  accessToken: string;
+  body: QueryVideoParam;
+
+  fields?: VideoFieldOption[];
+}): Promise<QueryVideoResponse> => {
+  const params = fields.join(',');
   const response = await requestHandler<QueryVideoResponse>({
-    url: END_POINT.queryVideo.url,
+    url: `${END_POINT.queryVideo.url}?fields=${params}`,
     method: END_POINT.queryVideo.method,
     headers: { ...HEADERS.tiktokApi, Authorization: `Bearer ${accessToken}` },
     body: JSON.stringify(body),
