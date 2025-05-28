@@ -13,10 +13,10 @@ export const queryVideo = async ({
 }: {
   accessToken: string;
   body: QueryVideoParam;
-
   fields?: VideoFieldOption[];
 }): Promise<QueryVideoResponse> => {
   const params = fields.join(',');
+  console.log(body);
   const response = await requestHandler<QueryVideoResponse>({
     url: `${END_POINT.queryVideo.url}?fields=${params}`,
     method: END_POINT.queryVideo.method,

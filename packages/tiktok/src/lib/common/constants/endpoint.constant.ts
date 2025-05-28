@@ -4,11 +4,11 @@ const BASE_URL = 'https://open.tiktokapis.com/v2';
 
 export const END_POINT = {
   authorize: {
-    url: `${BASE_URL}/authorize`,
+    url: `https://www.tiktok.com/v2/auth/authorize/`,
     method: 'GET',
   },
   exchange: {
-    url: `${BASE_URL}/oauth/access_token/`,
+    url: `${BASE_URL}/oauth/token/`,
     method: 'POST',
   },
   refresh: {
@@ -33,7 +33,7 @@ export const END_POINT = {
   },
   queryCreatorInfo: {
     url: `${BASE_URL}/post/publish/creator_info/query/`,
-    method: 'GET',
+    method: 'POST',
   },
   uploadVideoContent: {
     url: `${BASE_URL}/post/publish/video/init/`,

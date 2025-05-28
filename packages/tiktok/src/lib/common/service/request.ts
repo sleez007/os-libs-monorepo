@@ -1,3 +1,8 @@
+/**
+ * @description A wrapper for all requests made to TikTok API
+ * @param param0 {url: string, method: string, headers: Record<string, string>, body?: string | URLSearchParams | Buffer}
+ * @returns {Promise<T>} Promise<T> return data type
+ */
 export const requestHandler = async <T>({
   url,
   method,
@@ -14,12 +19,12 @@ export const requestHandler = async <T>({
     headers,
     body,
   });
-  console.log(response);
-  const data = (await response.json()) as T & { error: string };
+  console.log(response.status);
+  const data = (await response.json()) as T & { error: { message: string } };
   if (!response.ok) {
     throw new Error(
       data.error
-        ? `Error: ${data.error} status: ${response.statusText}`
+        ? `Error: ${data.error?.message} status: ${response.statusText}`
         : 'Failed to refresh token'
     );
   }

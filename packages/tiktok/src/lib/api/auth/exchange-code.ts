@@ -13,8 +13,6 @@ export const exchangeCodeForToken = async (
     client_secret: clientSecret,
   };
   const body = new URLSearchParams(oAuthParam);
-  const keys = Object.keys(oAuthParam);
-  keys.forEach((key) => body.append(key, oAuthParam[key]));
   const response = await requestHandler<TokenResponse>({
     url: END_POINT.exchange.url,
     method: END_POINT.exchange.method,

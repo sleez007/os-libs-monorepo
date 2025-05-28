@@ -1,4 +1,8 @@
-import { PostVideoParam, PublishResponse } from '../../common/types';
+import {
+  PostVideoParam,
+  PublishResponse,
+  VideoUploadParam,
+} from '../../common/types';
 import { END_POINT, HEADERS } from '../../common/constants';
 import { requestHandler } from '../../common/service';
 
@@ -22,20 +26,12 @@ export const uploadVideoToTikTokServer = async ({
   headers,
   fileBuffer,
   uploadUrl,
-}: {
-  uploadUrl: string;
-  fileBuffer: Buffer;
-  headers: {
-    'Content-Type': 'video/mp4' | 'video/quicktime' | 'video/webm';
-    'Content-Length': string;
-    'Content-Range': string;
-  };
-}) => {
-  const response = await requestHandler({
+}: VideoUploadParam) => {
+  await requestHandler({
     url: uploadUrl,
     method: 'PUT',
     headers,
     body: fileBuffer,
   });
-  return response;
+  return { message: 'Uploaded' };
 };
