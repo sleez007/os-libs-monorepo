@@ -27,10 +27,7 @@ export interface IUploader {
   buffer: Buffer;
 }
 
-const oauth = new OAuthTicTok(
-  'sbawi6n2vle3t1j9th',
-  'Mhg1IHJ46dyrW7EVI8d5l7yry8oDdsbn'
-);
+const oauth = new OAuthTicTok('client_key', 'secret_key');
 
 @Injectable()
 export class TiktokService {

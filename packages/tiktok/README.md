@@ -39,11 +39,11 @@ const data = await oauth.getRedirectUri({
     'video.upload',
   ], // You can also use comma-separated string format: 'user.info.basic,user.info.profile,user.info.stats,video.list,video.publish,video.upload'
   redirect_uri: 'your-redirect-uri',
-  state: "csrf_token",
-  code_challenge_method: "sha256" // Your preferred encryption method, defaults to sha256
+  state: 'csrf_token',
+  code_challenge_method: 'sha256', // Your preferred encryption method, defaults to sha256
 });
 
-console.log(data)
+console.log(data);
 
 // Response structure:
 // {
@@ -163,7 +163,7 @@ const fields: VideoFieldOption[] = ['id', 'title']; // Pass the fields you are i
 const filter = {
   filters: {
     max_count: 6, // Pagination size you need
-    cursor: 'cursor_id' // Optional
+    cursor: 'cursor_id', // Optional
   },
 };
 const data = await display.listVideo(filter, fields);
