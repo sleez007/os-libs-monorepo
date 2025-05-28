@@ -10,7 +10,7 @@ import type {
   PostPhotoParam,
   PostVideoParam,
   UploadPayload,
-} from '@innovate/tiktok';
+} from '@innovatespace/tiktok';
 import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('publish')

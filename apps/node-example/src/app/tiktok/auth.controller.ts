@@ -3,7 +3,7 @@ import type {
   OauthParam,
   RefreshTokenParam,
   RevokeTokenParam,
-} from '@innovate/tiktok';
+} from '@innovatespace/tiktok';
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { TiktokService } from './tiktok.service';
 

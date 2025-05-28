@@ -50,7 +50,7 @@
     ]
   },
   "dependencies": {
-    "@innovate/tiktok": "workspace:*"
+    "@innovatespace/tiktok": "workspace:*"
   },
   "devDependencies": {
     "@types/express": "^5.0.2",

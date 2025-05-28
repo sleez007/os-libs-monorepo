@@ -16,7 +16,7 @@ import {
   PostVideoParam,
   VideoPostInfo,
   UploadPayload,
-} from '@innovate/tiktok';
+} from '@innovatespace/tiktok';
 
 export interface IUploader {
   fieldname: string;

@@ -9,7 +9,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@innovate/tiktok',
+  displayName: '@innovatespace/tiktok',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {

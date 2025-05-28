@@ -200,7 +200,7 @@ importers:
 
   apps/node-example:
     dependencies:
-      '@innovate/tiktok':
+      '@innovatespace/tiktok':
         specifier: workspace:*
         version: link:../../packages/tiktok
     devDependencies:

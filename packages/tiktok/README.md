@@ -13,7 +13,7 @@ You need to [create a TikTok Developer Account](https://developers.tiktok.com/lo
 ## Installation
 
 ```bash
-npm install @innovate/tiktok
+npm install @innovatespace/tiktok
 ```
 
 ## OAuth Usage
@@ -22,10 +22,10 @@ npm install @innovate/tiktok
 
 ```typescript
 //ESM Import
-import { OAuthTicTok } from '@innovate/tiktok';
+import { OAuthTicTok } from '@innovatespace/tiktok';
 
 // CommonJS Import
-const { OAuthTicTok } = require('@innovate/tiktok');
+const { OAuthTicTok } = require('@innovatespace/tiktok');
 
 const oauth = new OAuthTicTok('your-client-id', 'your-client-secret');
 ```
@@ -125,10 +125,10 @@ console.log(data);
 
 ```typescript
 //ESM Import
-import { DisplayTicTok } from '@innovate/tiktok';
+import { DisplayTicTok } from '@innovatespace/tiktok';
 
 // CommonJS Import
-const { DisplayTicTok } = require('@innovate/tiktok');
+const { DisplayTicTok } = require('@innovatespace/tiktok');
 
 const display = new DisplayTicTok('your-access-token');
 ```
@@ -138,7 +138,7 @@ const display = new DisplayTicTok('your-access-token');
 ```typescript
 // This method is used to get the user data
 // Please pass only the fields you are interested in and also only the one covered by your token scope
-import { fieldOption } from '@innovate/tiktok';
+import { fieldOption } from '@innovatespace/tiktok';
 const fields: fieldOption[] = ['open_id', 'union_id', 'avatar_url']; // Pass the fields you are interested in
 const data = await display.userInfo(fields);
 
@@ -165,7 +165,7 @@ console.log(data);
 
 ```typescript
 // This method is used to list user videos
-import { VideoFieldOption } from '@innovate/tiktok';
+import { VideoFieldOption } from '@innovatespace/tiktok';
 const fields: VideoFieldOption[] = ['id', 'title']; // Pass the fields you are interested in. see more https://developers.tiktok.com/doc/tiktok-api-v2-video-list?enter_method=left_navigation
 
 const filter = {
@@ -200,7 +200,7 @@ console.log(data);
 
 ```typescript
 // This method is used to query user videos
-import { VideoFieldOption } from '@innovate/tiktok';
+import { VideoFieldOption } from '@innovatespace/tiktok';
 const fields: VideoFieldOption[] = ['id', 'title']; // Pass the fields you are interested in. see more https://developers.tiktok.com/doc/tiktok-api-v2-video-query?enter_method=left_navigation
 
 const filter = {
@@ -236,10 +236,10 @@ console.log(data);
 
 ```typescript
 //ESM Import
-import { ContentPublishTicTok } from '@innovate/tiktok';
+import { ContentPublishTicTok } from '@innovatespace/tiktok';
 
 // CommonJS Import
-const { ContentPublishTicTok } = require('@innovate/tiktok');
+const { ContentPublishTicTok } = require('@innovatespace/tiktok');
 
 const content = new ContentPublishTicTok('your-access-token');
 ```

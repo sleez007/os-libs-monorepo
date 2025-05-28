@@ -5,7 +5,7 @@ import type {
   ListVideoParam,
   QueryVideoParam,
   VideoFieldOption,
-} from '@innovate/tiktok';
+} from '@innovatespace/tiktok';
 
 @Controller('display')
 export class DisplayController {
