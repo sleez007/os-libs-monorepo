@@ -21,7 +21,11 @@ npm install @innovate/tiktok
 ### Instantiating the OAuthTicTok Class
 
 ```typescript
+//ESM Import
 import { OAuthTicTok } from '@innovate/tiktok';
+
+// CommonJS Import
+const { OAuthTicTok } = require('@innovate/tiktok');
 
 const oauth = new OAuthTicTok('your-client-id', 'your-client-secret');
 ```
@@ -120,7 +124,11 @@ console.log(data);
 ### Instantiating the DisplayTicTok Class
 
 ```typescript
+//ESM Import
 import { DisplayTicTok } from '@innovate/tiktok';
+
+// CommonJS Import
+const { DisplayTicTok } = require('@innovate/tiktok');
 
 const display = new DisplayTicTok('your-access-token');
 ```
@@ -227,7 +235,11 @@ console.log(data);
 ### Instantiating the ContentPublishTicTok Class
 
 ```typescript
+//ESM Import
 import { ContentPublishTicTok } from '@innovate/tiktok';
+
+// CommonJS Import
+const { ContentPublishTicTok } = require('@innovate/tiktok');
 
 const content = new ContentPublishTicTok('your-access-token');
 ```
