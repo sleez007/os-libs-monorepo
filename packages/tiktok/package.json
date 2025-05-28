@@ -29,14 +29,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/innovate-ai/tiktok.git",
+    "url": "https://github.com/sleez007/os-libs-monorepo.git",
     "directory": "packages/tiktok"
   },
-  "homepage": "https://github.com/innovate-ai/tiktok#readme",
+  "homepage": "https://github.com/sleez007/os-libs-monorepo/tree/main/packages/tiktok#readme",
   "contributors": [
     {
       "name": "Kingsley Etoka",
-      "email": "kingsley.etoka@innovate.co",
+      "email": "kingsley.etoka@gmail.com",
       "url": "https://github.com/sleez007"
     }
   ],
