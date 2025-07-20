@@ -1,1 +1,2 @@
-export * from './lib/instagram-business';
+export * from './lib/core';
+export * from './lib/type';
