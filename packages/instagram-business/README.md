@@ -41,7 +41,7 @@ const redirectUrl = OAuthInstagram.getRedirectUri({
   scope: ['instagram_business_basic', 'instagram_business_content_publish'],
   clientId: 'your-client-id',
   redirectUri: 'https://your-app.com/callback',
-  state: 'optional-state-parameter'
+  state: 'optional-state-parameter',
 });
 
 // Step 2: Exchange authorization code for short-lived token
@@ -73,7 +73,7 @@ const publisher = new InstagramPublish(
 
 // Publish a single image
 const imageContainer = await publisher.createContainer({
-  image_url: 'https://example.com/image.jpg'
+  image_url: 'https://example.com/image.jpg',
 });
 
 const publishedImage = await publisher.publishContainer(imageContainer.id);
@@ -81,7 +81,7 @@ const publishedImage = await publisher.publishContainer(imageContainer.id);
 // Publish a video
 const videoContainer = await publisher.createContainer({
   video_url: 'https://example.com/video.mp4',
-  media_type: 'VIDEO'
+  media_type: 'VIDEO',
 });
 
 const publishedVideo = await publisher.publishContainer(videoContainer.id);
@@ -90,20 +90,22 @@ const publishedVideo = await publisher.publishContainer(videoContainer.id);
 const carouselItems = [
   await publisher.createContainer({
     image_url: 'https://example.com/image1.jpg',
-    is_carousel_item: true
+    is_carousel_item: true,
   }),
   await publisher.createContainer({
     image_url: 'https://example.com/image2.jpg',
-    is_carousel_item: true
-  })
+    is_carousel_item: true,
+  }),
 ];
 
 const carouselContainer = await publisher.createCarouselContainer({
-  children: carouselItems.map(item => item.id),
-  media_type: 'CAROUSEL'
+  children: carouselItems.map((item) => item.id),
+  media_type: 'CAROUSEL',
 });
 
-const publishedCarousel = await publisher.publishContainer(carouselContainer.id);
+const publishedCarousel = await publisher.publishContainer(
+  carouselContainer.id
+);
 ```
 
 ## API Reference
@@ -199,9 +201,9 @@ Publishes a created container to Instagram.
 ```typescript
 try {
   const container = await publisher.createContainer({
-    image_url: 'https://example.com/image.jpg'
+    image_url: 'https://example.com/image.jpg',
   });
-  
+
   const result = await publisher.publishContainer(container.id);
   console.log('Published successfully:', result.id);
 } catch (error) {
@@ -219,10 +221,14 @@ try {
 ## Getting Instagram API Credentials
 
 1. Create a Facebook App at [Facebook Developers](https://developers.facebook.com/)
-2. Add Instagram Basic Display and Instagram API products
-3. Configure OAuth redirect URIs
-4. Get your Client ID and Client Secret
-5. Follow the OAuth flow to get access tokens
+2. Add Instagram Basic Display and Instagram API products to your app
+3. Connect your Instagram Business Account to the Facebook App
+4. Configure OAuth redirect URIs in your app settings
+5. Get your Client ID and Client Secret from the app dashboard
+6. Users authenticate using their Instagram Business account credentials
+7. Follow the OAuth flow to exchange authorization codes for access tokens
+
+**Note:** While you create the app through Facebook Developers (since Instagram is owned by Meta), users will log in with their Instagram Business account credentials during the OAuth flow.
 
 For detailed setup instructions, visit the [Instagram Basic Display API documentation](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started).
 
@@ -231,10 +237,10 @@ For detailed setup instructions, visit the [Instagram Basic Display API document
 This library is written in TypeScript and includes full type definitions. All API responses and parameters are properly typed for better development experience.
 
 ```typescript
-import type { 
-  CreateContainerParam, 
+import type {
+  CreateContainerParam,
   CreateContainerResponse,
-  TokenExchangeResponse 
+  TokenExchangeResponse,
 } from '@innovatespace/ig-business';
 ```
 
