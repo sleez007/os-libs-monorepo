@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/instagram-business"
+    },
+    {
       "path": "../../packages/tiktok"
     },
     {

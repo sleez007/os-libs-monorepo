@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TiktokModule } from './tiktok/tiktok.module';
+import { InstagramModule } from './instagram/instagram.module';
 
 @Module({
-  imports: [TiktokModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TiktokModule, InstagramModule],
 })
 export class AppModule {}

@@ -22,6 +22,9 @@
   ],
   "references": [
     {
+      "path": "../../packages/instagram-business/tsconfig.lib.json"
+    },
+    {
       "path": "../../packages/tiktok/tsconfig.lib.json"
     }
   ]
