@@ -7,7 +7,7 @@ import {
 
 const accessToken =
   'IGAANkhgXa0GxBZAE00ZA0hja1dDYkItc0Vhd0s3THRzSHVnN1UwN0Q4dDROTkxHTFJVd1hXOGpsT3pRTVAxVDdGclZAhZAEJIUmZArcjU1Y2oxT09OR3E4SkE5STB6cWV5d0N4eS1sUGNGakhpZAHRPRTRqYktn';
-const userId = '24484102424516690';
+const userId = '17841473358405902';
 
 @Injectable()
 export class InstagramPublishService {
@@ -24,7 +24,7 @@ export class InstagramPublishService {
     return this.instagramPublish.createCarouselContainer(dto);
   }
 
-  async publishContainer(containerId: string) {
-    return this.instagramPublish.publishContainer(containerId);
+  async publishContainer(creationId: string) {
+    return this.instagramPublish.publishContainer(creationId);
   }
 }

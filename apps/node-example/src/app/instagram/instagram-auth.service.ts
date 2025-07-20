@@ -11,8 +11,8 @@ export class InstagramAuthService {
       process.env.INSTAGRAM_APP_SECRET
     );
     this.oauthInstagram = new OAuthInstagram(
-      process.env.INSTAGRAM_APP_ID,
-      process.env.INSTAGRAM_APP_SECRET
+      process.env.INSTAGRAM_APP_ID as string,
+      process.env.INSTAGRAM_APP_SECRET as string
     );
   }
   async getRedirectUri(param: RedirectParam) {

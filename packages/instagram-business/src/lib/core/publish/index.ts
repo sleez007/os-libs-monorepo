@@ -70,7 +70,7 @@ export class InstagramPublish {
   }
 
   async publishContainer(
-    containerId: string
+    creationId: string
   ): Promise<PublishContainerResponse> {
     const url = `${ENDPOINTS.publishEndPoint}/${this.version}/${this.accountId}/media_publish`;
     const response = await requestHelper<PublishContainerResponse>({
@@ -80,7 +80,7 @@ export class InstagramPublish {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${this.accessToken}`,
       },
-      body: JSON.stringify({ container_id: containerId }),
+      body: JSON.stringify({ creation_id: creationId }),
     });
     return response;
   }

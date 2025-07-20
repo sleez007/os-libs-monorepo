@@ -2,9 +2,9 @@ import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { InstagramAuthService } from './instagram-auth.service';
 import { InstagramPublishService } from './instagram-publish.service';
 import {
-  RedirectParam,
-  CreateContainerParam,
-  CreateCarouselContainerParam,
+  type RedirectParam,
+  type CreateContainerParam,
+  type CreateCarouselContainerParam,
 } from '@innovatespace/ig-business';
 
 @Controller('instagram')
@@ -72,7 +72,7 @@ export class InstagramController {
   }
 
   @Post('publish')
-  publishContainer(@Body() { containerId }: { containerId: string }) {
-    return this.instagramPublishService.publishContainer(containerId);
+  publishContainer(@Body() { creationId }: { creationId: string }) {
+    return this.instagramPublishService.publishContainer(creationId);
   }
 }
