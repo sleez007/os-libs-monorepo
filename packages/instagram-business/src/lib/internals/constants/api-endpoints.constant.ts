@@ -4,4 +4,5 @@ export const ENDPOINTS = {
   longLivedTokenExchange: 'https://graph.instagram.com/access_token',
   refreshEndPoint: 'https://graph.instagram.com/refresh_access_token',
   publishEndPoint: 'https://graph.instagram.com',
+  accountEndPoint: 'https://graph.instagram.com',
 };
