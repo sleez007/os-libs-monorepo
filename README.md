@@ -1,51 +1,240 @@
-# MyLibs
+# OS Libs Monorepo
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+A comprehensive monorepo containing TypeScript libraries for social media platform integrations, built with Nx workspace for optimal development experience and maintainability.
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## 📦 Packages
 
-## Finish your CI setup
+### [@innovatespace/ig-business](./packages/instagram-business)
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/t2d7pEvpnU)
+[![npm version](https://badge.fury.io/js/@innovatespace%2Fig-business.svg)](https://badge.fury.io/js/@innovatespace%2Fig-business)
 
+A TypeScript library for Instagram Business API integration.
 
-## Generate a library
+**Features:**
 
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
+- 🔐 **OAuth Authentication** - Complete Instagram OAuth flow implementation
+- 📸 **Content Publishing** - Publish images, videos, and carousel posts
+- 👤 **Account Information** - Retrieve Instagram Business account details and metrics
+- 🎯 **TypeScript Support** - Fully typed for better development experience
+- 🚀 **Modern ESM** - Built with ES modules for optimal tree-shaking
+- ⚡ **Zero Dependencies** - Lightweight with no external dependencies
+
+**Installation:**
+
+```bash
+npm install @innovatespace/ig-business
 ```
 
-## Run tasks
+**Quick Start:**
+```typescript
+import { OAuthInstagram, InstagramPublish, InstagramAccount } from '@innovatespace/ig-business';
 
-To build the library use:
+// OAuth Authentication
+const oauth = new OAuthInstagram('client-id', 'client-secret');
 
-```sh
-npx nx build pkg1
+// Content Publishing
+const publisher = new InstagramPublish('access-token', 'account-id');
+
+// Account Information
+const account = new InstagramAccount('access-token');
 ```
 
-To run any task with Nx use:
+### [@innovatespace/tiktok](./packages/tiktok)
 
-```sh
-npx nx <target> <project-name>
+A Node.js client library that wraps the TikTok API, covering login with TikTok, Display API, and Content Publish API.
+
+**Features:**
+
+- 🔐 **OAuth Authentication** - TikTok login and authorization flow
+- 📱 **Display API** - Retrieve user information and video data
+- 📤 **Content Publishing** - Upload and publish videos to TikTok
+- 🎯 **TypeScript Support** - Fully typed for better development experience
+- 🌐 **SSR Compatible** - Works with Next.js, Nuxt.js, and other SSR frameworks
+
+**Installation:**
+
+```bash
+npm install @innovatespace/tiktok
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+**Quick Start:**
+```typescript
+import { OAuthTicTok, TikTokContent, TikTokQuery } from '@innovatespace/tiktok';
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+// OAuth Authentication
+const oauth = new OAuthTicTok('client-id', 'client-secret');
 
-## Versioning and releasing
+// Content Publishing
+const content = new TikTokContent('access-token');
 
-To version and release the library use
-
+// Query API
+const query = new TikTokQuery('access-token');
 ```
-npx nx release
+
+## 🚀 Example Applications
+
+### [Node.js Example](./apps/node-example)
+A NestJS application demonstrating how to use both Instagram Business and TikTok libraries in a Node.js environment.
+
+### [SSR Example](./apps/ssr-example)
+A server-side rendering example showcasing the libraries' compatibility with SSR frameworks.
+
+## 🛠️ Development
+
+### Prerequisites
+
+- Node.js 18 or higher
+- pnpm (recommended) or npm
+- Git
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/sleez007/os-libs-monorepo.git
+cd os-libs-monorepo
+
+# Install dependencies
+pnpm install
 ```
 
-Pass `--dry-run` to see what would happen without actually releasing the library.
+### Building Packages
 
-[Learn more about Nx release &raquo;](hhttps://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```bash
+# Build all packages
+pnpm build
+
+# Build specific package
+npx nx build @innovatespace/ig-business
+npx nx build @innovatespace/tiktok
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+pnpm test
+
+# Test specific package
+npx nx test @innovatespace/ig-business
+npx nx test @innovatespace/tiktok
+```
+
+### Running Example Applications
+
+```bash
+# Start NestJS example
+pnpm serve:nest
+
+# Start SSR example
+pnpm serve:ssr
+```
+
+### Development Workflow
+
+```bash
+# Format code
+pnpm format
+
+# Lint code
+pnpm lint
+
+# Check for circular dependencies
+pnpm check-circular-deps
+```
+
+## 📋 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `pnpm build` | Build all packages and applications |
+| `pnpm test` | Run all tests |
+| `pnpm lint` | Lint all projects |
+| `pnpm format` | Format code using Prettier |
+| `pnpm serve:nest` | Start the NestJS example application |
+| `pnpm serve:ssr` | Start the SSR example application |
+| `pnpm release` | Release packages to npm |
+| `pnpm first:release` | First release of packages |
+| `pnpm generate:plan` | Generate release plan |
+
+## 🏗️ Project Structure
+
+```text
+os-libs-monorepo/
+├── packages/
+│   ├── instagram-business/     # Instagram Business API library
+│   └── tiktok/                 # TikTok API library
+├── apps/
+│   ├── node-example/           # NestJS example application
+│   └── ssr-example/            # SSR example application
+├── tools/                      # Build tools and scripts
+└── docs/                       # Documentation
+```
+
+## 📝 Publishing
+
+This monorepo uses Nx release for automated versioning and publishing:
+
+```bash
+# Generate a release plan
+pnpm generate:plan
+
+# Release packages
+pnpm release
+
+# First time release
+pnpm first:release
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Write comprehensive tests for new features
+- Update documentation when adding new APIs
+- Use conventional commits for commit messages
+- Ensure all linting and formatting checks pass
+
+## 📚 Documentation
+
+Each package contains detailed documentation:
+
+- [Instagram Business API Documentation](./packages/instagram-business/README.md)
+- [TikTok API Documentation](./packages/tiktok/README.md)
+
+## 🔗 Useful Links
+
+- [Nx Documentation](https://nx.dev)
+- [Instagram Business API](https://developers.facebook.com/docs/instagram-api)
+- [TikTok for Developers](https://developers.tiktok.com/)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **Kingsley Etoka** - *Initial work* - [@sleez007](https://github.com/sleez007)
+
+## 🙏 Acknowledgments
+
+- Built with [Nx](https://nx.dev) for optimal monorepo management
+- Inspired by the need for better social media API integrations
+- Thanks to the open-source community for continuous inspiration
+
+---
+
+**Happy coding!** 🚀
 
 ## Keep TypeScript project references up to date
 
@@ -65,26 +254,3 @@ npx nx sync:check
 
 [Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
 
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
