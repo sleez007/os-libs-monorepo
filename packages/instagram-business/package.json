@@ -16,6 +16,32 @@
     "dist",
     "!**/*.tsbuildinfo"
   ],
+  "license": "MIT",
+  "author": "Kingsley Etoka",
+  "description": "Instagram Business SDK Wrapper for Node.js",
+  "keywords": [
+    "instagram",
+    "business",
+    "meta",
+    "sdk",
+    "wrapper",
+    "nodejs",
+    "NestJS",
+    "NextJs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sleez007/os-libs-monorepo.git",
+    "directory": "packages/instagram-business"
+  },
+  "homepage": "https://github.com/sleez007/os-libs-monorepo/tree/main/packages/instagram-business#readme",
+  "contributors": [
+    {
+      "name": "Kingsley Etoka",
+      "email": "kingsley.etoka@gmail.com",
+      "url": "https://github.com/sleez007"
+    }
+  ],
   "devDependencies": {
     "@types/node": "^22.15.17"
   }
