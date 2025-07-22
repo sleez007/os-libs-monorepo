@@ -18,6 +18,11 @@ export interface CreateContainerParam {
   media_type?: 'VIDEO' | 'REELS' | 'STORIES';
   is_carousel_item?: boolean;
   upload_type?: 'resumable';
+  caption?: string;
+  alt_text?: string;
+  location_id?: string;
+  share_to_feed?: boolean;
+  [key: string]: unknown;
 }
 
 export interface CreateCarouselContainerParam {

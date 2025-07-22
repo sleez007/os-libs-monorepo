@@ -27,6 +27,7 @@ export class InstagramPublish {
 
     if (dto?.video_url) {
       dtoCopy = {
+        ...dto,
         ...(dto?.upload_type && { upload_type: dto.upload_type }),
         media_type: dto.media_type || 'VIDEO',
         is_carousel_item: dto.is_carousel_item || false,
@@ -35,6 +36,7 @@ export class InstagramPublish {
     }
     if (dto?.image_url) {
       dtoCopy = {
+        ...dto,
         ...(dto?.upload_type && { upload_type: dto.upload_type }),
         is_carousel_item: dto.is_carousel_item || false,
         image_url: dto.image_url,

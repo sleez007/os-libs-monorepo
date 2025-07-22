@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { InstagramAuthService } from './instagram-auth.service';
 import { InstagramPublishService } from './instagram-publish.service';
+import { InstagramAccountService } from './instagram-account.service';
 import {
   type RedirectParam,
   type CreateContainerParam,
@@ -11,7 +12,8 @@ import {
 export class InstagramController {
   constructor(
     private readonly instagramAuthService: InstagramAuthService,
-    private readonly instagramPublishService: InstagramPublishService
+    private readonly instagramPublishService: InstagramPublishService,
+    private readonly instagramAccountService: InstagramAccountService
   ) {}
 
   @Post()
@@ -74,5 +76,10 @@ export class InstagramController {
   @Post('publish')
   publishContainer(@Body() { creationId }: { creationId: string }) {
     return this.instagramPublishService.publishContainer(creationId);
+  }
+
+  @Get('account')
+  getAccountData(@Query() { fields }: { fields: string[] | string }) {
+    return this.instagramAccountService.getUserData(fields);
   }
 }

@@ -9,6 +9,7 @@ A TypeScript library for Instagram Business API integration, providing OAuth aut
 
 - 🔐 **OAuth Authentication** - Complete Instagram OAuth flow implementation
 - 📸 **Content Publishing** - Publish images, videos, and carousel posts
+- 👤 **Account Information** - Retrieve Instagram Business account details and metrics
 - 🎯 **TypeScript Support** - Fully typed for better development experience
 - 🚀 **Modern ESM** - Built with ES modules for optimal tree-shaking
 - ⚡ **Zero Dependencies** - Lightweight with no external dependencies
@@ -108,6 +109,31 @@ const publishedCarousel = await publisher.publishContainer(
 );
 ```
 
+### Account Information
+
+```typescript
+import { InstagramAccount } from '@innovatespace/ig-business';
+
+const account = new InstagramAccount('your-access-token');
+
+// Get user account data with specific fields
+const userData = await account.getUserData([
+  'id',
+  'username',
+  'account_type',
+  'media_count',
+  'followers_count',
+  'follows_count',
+  'profile_picture_url',
+  'biography',
+]);
+
+// Or get specific field as a string
+const username = await account.getUserData('username');
+
+console.log('Account info:', userData);
+```
+
 ## API Reference
 
 ### OAuthInstagram
@@ -152,6 +178,60 @@ Converts short-lived token to long-lived token (60 days).
 ##### `refreshInstagramAccessToken(longLivedToken: string): Promise<TokenExchangeResponse>`
 
 Refreshes an expired long-lived access token.
+
+### InstagramAccount
+
+Handles Instagram Business account information retrieval.
+
+#### InstagramAccount Constructor
+
+```typescript
+new InstagramAccount(accessToken: string, version?: string)
+```
+
+**Parameters:**
+
+- `accessToken`: Instagram access token
+- `version`: API version (default: 'v23.0')
+
+#### Account Methods
+
+##### `getUserData<T>(fields: string[] | string): Promise<T>`
+
+Retrieves Instagram Business account information.
+
+**Parameters:**
+
+- `fields`: Field(s) to retrieve. Can be a string or array of strings.
+
+**Available Fields:**
+
+- `id` - Instagram Business Account ID
+- `user_id` - Instagram User ID
+- `username` - Instagram username
+- `account_type` - Account type (BUSINESS, CREATOR, etc.)
+- `media_count` - Number of media objects
+- `followers_count` - Number of followers
+- `follows_count` - Number of accounts followed
+- `profile_picture_url` - Profile picture URL
+- `biography` - Account biography
+- `website` - Website URL
+- `name` - Display name
+
+**Example:**
+
+```typescript
+// Get multiple fields
+const accountInfo = await account.getUserData([
+  'id',
+  'username',
+  'followers_count',
+  'media_count',
+]);
+
+// Get single field
+const username = await account.getUserData('username');
+```
 
 ### InstagramPublish
 
@@ -241,6 +321,7 @@ import type {
   CreateContainerParam,
   CreateContainerResponse,
   TokenExchangeResponse,
+  InstagramAccount,
 } from '@innovatespace/ig-business';
 ```
 
