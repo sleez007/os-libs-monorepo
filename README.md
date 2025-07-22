@@ -28,8 +28,13 @@ npm install @innovatespace/ig-business
 ```
 
 **Quick Start:**
+
 ```typescript
-import { OAuthInstagram, InstagramPublish, InstagramAccount } from '@innovatespace/ig-business';
+import {
+  OAuthInstagram,
+  InstagramPublish,
+  InstagramAccount,
+} from '@innovatespace/ig-business';
 
 // OAuth Authentication
 const oauth = new OAuthInstagram('client-id', 'client-secret');
@@ -60,6 +65,7 @@ npm install @innovatespace/tiktok
 ```
 
 **Quick Start:**
+
 ```typescript
 import { OAuthTicTok, TikTokContent, TikTokQuery } from '@innovatespace/tiktok';
 
@@ -76,9 +82,11 @@ const query = new TikTokQuery('access-token');
 ## 🚀 Example Applications
 
 ### [Node.js Example](./apps/node-example)
+
 A NestJS application demonstrating how to use both Instagram Business and TikTok libraries in a Node.js environment.
 
 ### [SSR Example](./apps/ssr-example)
+
 A server-side rendering example showcasing the libraries' compatibility with SSR frameworks.
 
 ## 🛠️ Development
@@ -147,17 +155,17 @@ pnpm check-circular-deps
 
 ## 📋 Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `pnpm build` | Build all packages and applications |
-| `pnpm test` | Run all tests |
-| `pnpm lint` | Lint all projects |
-| `pnpm format` | Format code using Prettier |
-| `pnpm serve:nest` | Start the NestJS example application |
-| `pnpm serve:ssr` | Start the SSR example application |
-| `pnpm release` | Release packages to npm |
-| `pnpm first:release` | First release of packages |
-| `pnpm generate:plan` | Generate release plan |
+| Script               | Description                          |
+| -------------------- | ------------------------------------ |
+| `pnpm build`         | Build all packages and applications  |
+| `pnpm test`          | Run all tests                        |
+| `pnpm lint`          | Lint all projects                    |
+| `pnpm format`        | Format code using Prettier           |
+| `pnpm serve:nest`    | Start the NestJS example application |
+| `pnpm serve:ssr`     | Start the SSR example application    |
+| `pnpm release`       | Release packages to npm              |
+| `pnpm first:release` | First release of packages            |
+| `pnpm generate:plan` | Generate release plan                |
 
 ## 🏗️ Project Structure
 
@@ -224,7 +232,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Kingsley Etoka** - *Initial work* - [@sleez007](https://github.com/sleez007)
+- **Kingsley Etoka** - _Initial work_ - [@sleez007](https://github.com/sleez007)
 
 ## 🙏 Acknowledgments
 
@@ -253,4 +261,3 @@ npx nx sync:check
 ```
 
 [Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
-
